@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog
+{% endblock title %}
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block body %}
+<div class="container">
+    <h3>Tutorials Post By Nextsolution</h3>
+    {% for post in allPosts %}
+<!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" style="" src="{{ post.image.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">{{post.title}}</h2>
+            <p class="card-text">{{post.content| truncatechars:300}}</p>
+            <a href="/blog/{{post.slug}}" class="btn btn-primary">Read More</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on {{post.timeStamp}} by {{post.author}}
+          </div>
+        </div>
+        {% endfor post in allPosts %}
+
+    </div>
+</div>
+</div>
+{% endblock body %}

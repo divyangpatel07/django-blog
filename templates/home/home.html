@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home
+{% endblock title %}
+{% block homeactive %}active{% endblock homeactive %}
+
+{% block body %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <img alt="logo" src="/static/common/img/photo.png" width="180">
+        <h1 class="jumbotron-heading"><span id="typed"></span><span class="typed-cursor"></span></h1>
+        <script>var typed = new Typed('.typed-cursor', {strings: ['Welcome to Nextsolution','Hey I am Divyang Patel', 'I am a Web Developer','I am a Android App Developer'],
+  typeSpeed: 30,
+  backSpeed: 30,
+  loop: true,
+});
+
+        </script>
+        <p class="lead text-muted">Confused, which language i choose,Don't worry Divyang is here. Browse blog and find out
+            the best language posts for you. Its free!<br>Nextsolution is my attempt to teach basics and those coding
+            techniques to people in short time which took me ages to learn.</p>
+        <p>
+            <a class="btn btn-danger my-2" href="/blog">Browse Blog</a>
+            <a class="btn btn-success my-2" href="/about">About</a>
+            <a class="btn btn-primary my-2" href="/contact">Contact Me</a>
+        </p>
+    </div>
+</section>
+
+{% endblock body %}

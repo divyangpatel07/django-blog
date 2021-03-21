@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results
+{% endblock title %}
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block body %}
+<div class="container">
+    <h3>Search Result:</h3>
+
+    {% if allPosts|length <= 1 %}
+    <p>No Search Results</p>
+
+    Your search - <b>{{query}}</b> - did not match any document <br>
+    Suggestions: <br>
+    Try differernt keywords:
+    {% endif %}
+
+    {% for post in allPosts %}
+    <div class="card mb-4">
+          <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">{{post.title}}</h2>
+            <p class="card-text">{{post.content}}</p>
+            <a href="/blog/{{post.slug}}" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+              {{post.timeStamp}} by {{post.author}}
+            <a href="#">Start Bootstrap</a>
+          </div>
+        </div>
+    {% endfor %}
+    {% endblock %}
